@@ -26,3 +26,6 @@
 ::-webkit-scrollbar-corner{
     background: #353535;
 }
+::-webkit-datetime-edit { padding: 1em; }
+
+::-webkit-calendar-picker-indicator { filter: invert(100%); }
