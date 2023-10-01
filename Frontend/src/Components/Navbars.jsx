@@ -1,9 +1,20 @@
 import React from "react";
 
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+  Avatar,
+  Button,
+} from "@nextui-org/react";
 
-
-export default function App() {
+export function AuthNavigationBar() {
   return (
     <Navbar className="bg-transparent " shouldHideOnScroll>
       <NavbarBrand>
@@ -38,6 +49,21 @@ export default function App() {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+      </NavbarContent>
+    </Navbar>
+  );
+}
+
+export function GuestNavigationBar() {
+  return (
+    <Navbar className="bg-transparent " shouldHideOnScroll>
+      <NavbarBrand>
+        <p className="font-bold  text-green-500">TimeKing</p>
+      </NavbarBrand>
+      <NavbarContent as="div" justify="end" className="hidden sm:flex">
+        <Link as={"button"} className="text-white">Login</Link>
+        <span className="text-green-500">|</span>
+        <Link as={"button"} className="text-white">Signup</Link>
       </NavbarContent>
     </Navbar>
   );

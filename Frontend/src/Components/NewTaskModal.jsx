@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Input } from "@nextui-org/react";
 
-function AddTaskModal({ isOpen, onClose }) {
+function NewTask({ isOpen, onClose }) {
   return (
     <Modal isOpen={isOpen} onOpenChange={onClose} placement="top-center" backdrop="blur" className="bg-[rgb(21,21,21)] text-white" >
       <ModalContent>
@@ -11,10 +11,9 @@ function AddTaskModal({ isOpen, onClose }) {
             <ModalBody>
               <Input
                 autoFocus
-                label="Task Name"
-                placeholder="Enter task name"
-                variant="underlined"
-                
+                label="Task"
+                placeholder="Enter new task here...."
+                variant="underlined"     
               />
 
               <input type="datetime-local" className="bg-transparent " />
@@ -36,4 +35,4 @@ function AddTaskModal({ isOpen, onClose }) {
   );
 }
 
-export default AddTaskModal;
+export default NewTask;
