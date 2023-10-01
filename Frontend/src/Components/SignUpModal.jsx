@@ -18,7 +18,7 @@ export default function SignUpModal({ isOpen, onClose }) {
       <Modal
         isOpen={isOpen}
         onOpenChange={onClose}
-        placement="top-center"
+        placement="center"
         backdrop="blur"
         className="bg-[rgb(21,21,21)] text-white"
       >

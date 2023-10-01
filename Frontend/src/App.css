@@ -29,3 +29,11 @@
 ::-webkit-datetime-edit { padding: 1em; }
 
 ::-webkit-calendar-picker-indicator { filter: invert(100%); }
+
+input[type="date"] {
+	background-color: black;
+	color:  rgb(59, 189, 59);
+	border: 1px solid rgb(59, 189, 59);
+	padding: 2px;
+	border-radius: 5px;
+}

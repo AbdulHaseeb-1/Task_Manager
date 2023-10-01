@@ -5,8 +5,9 @@ import LoginModal from "../Components/LoginModal";
 import { useDisclosure } from "@nextui-org/react";
 import SignUpModal from "../Components/SignUpModal";
 
+
 export default function Entry() {
-  const { onOpen: onOpenLogin, isOpen: isOpenLogin, onClose: onCloseLogin } = useDisclosure();
+  const { onOpen: onOpenLogin , isOpen: isOpenLogin, onClose: onCloseLogin } = useDisclosure();
   const { onOpen: onOpenSignUp, isOpen: isOpenSignUp, onClose: onCloseSignUp } = useDisclosure();
 
   return (
@@ -15,6 +16,7 @@ export default function Entry() {
         <div className="flex gap-3 items-center">
           <ClipboardCheck size={100} />
           <h1 className="text-gray-200 text-2xl">Take Control on your day</h1>
+      
         </div>
       </div>
       <div className="grid place-content-center h-[100vh] text-gray-200">

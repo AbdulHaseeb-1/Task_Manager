@@ -7,7 +7,7 @@ export default function LoginModal({isOpen,onClose}) {
  
   return (
     <>
-       <Modal isOpen={isOpen} onOpenChange={onClose} placement="top-center" backdrop="blur" className="bg-[rgb(21,21,21)] text-white" >
+       <Modal isOpen={isOpen} onOpenChange={onClose} placement="  center" backdrop="blur" className="bg-[rgb(21,21,21)] text-white" >
         <ModalContent>
           {(onClose) => (
             <>
