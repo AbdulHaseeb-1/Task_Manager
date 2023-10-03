@@ -8,8 +8,8 @@ export default function App() {
     <div>
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Entry/>} />
-        <Route path='/Tasks' element={<TaskPage/>} />
+        <Route path='/Entry' element={<Entry/>} />
+        <Route path='/' element={<TaskPage/>} />
         <Route path='/calander' element={<Calander/>} />
         
 

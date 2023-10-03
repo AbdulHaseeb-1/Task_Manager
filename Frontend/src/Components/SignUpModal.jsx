@@ -36,7 +36,7 @@ export default function SignUpModal({ isOpen, onClose }) {
                   variant="bordered"
                 />
                 <Input
-                  autoFocus
+                  // autoFocus
                   label="Email"
                   placeholder="Enter your email"
                   variant="bordered"

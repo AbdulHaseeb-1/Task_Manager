@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Navbar,
@@ -13,6 +13,10 @@ import {
   Avatar,
   Button,
 } from "@nextui-org/react";
+import LoginModal from "../Components/LoginModal";
+import { useDisclosure } from "@nextui-org/react";
+import SignUpModal from "../Components/SignUpModal";
+import ThemeChanger from "./ThemeChanger";
 
 export function AuthNavigationBar() {
   return (
@@ -55,15 +59,39 @@ export function AuthNavigationBar() {
 }
 
 export function GuestNavigationBar() {
+  const {
+    onOpen: onOpenLogin,
+    isOpen: isOpenLogin,
+    onClose: onCloseLogin,
+  } = useDisclosure();
+  const {
+    onOpen: onOpenSignUp,
+    isOpen: isOpenSignUp,
+    onClose: onCloseSignUp,
+  } = useDisclosure();
+  const [Theme, setTheme] = useState(true);
   return (
     <Navbar className="bg-transparent " shouldHideOnScroll>
       <NavbarBrand>
         <p className="font-bold  text-green-500">TimeKing</p>
       </NavbarBrand>
-      <NavbarContent as="div" justify="end" className="hidden sm:flex">
-        <Link as={"button"} className="text-white">Login</Link>
-        <span className="text-green-500">|</span>
-        <Link as={"button"} className="text-white">Signup</Link>
+      <NavbarContent as="div" justify="end" className="">
+        <Link as={"button"} className="text-white" onPress={onOpenLogin}>
+          Login
+        </Link>
+        <LoginModal isOpen={isOpenLogin} onClose={onCloseLogin} />
+
+        <span className="text-green-500 hidden sm:flex">|</span>
+        <Link
+          as={"button"}
+          className="text-white hidden sm:flex"
+          onPress={onOpenSignUp}
+        >
+          Signup
+        </Link>
+        <SignUpModal isOpen={isOpenSignUp} onClose={onCloseSignUp} />
+
+        <ThemeChanger />
       </NavbarContent>
     </Navbar>
   );

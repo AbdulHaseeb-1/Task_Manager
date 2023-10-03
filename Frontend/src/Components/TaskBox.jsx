@@ -7,12 +7,14 @@ import {
   PopoverContent,
   Button,
 } from "@nextui-org/react";
+import { AllThemes } from "../Contexts/ThemeContext";
 
 export default function TaskBox({ task, time, status }) {
+  const { Theme } = AllThemes();
   return (
     <Popover placement="bottom">
       <PopoverTrigger>
-        <div className=" relative p-2 m-3 bg-[rgb(21,21,21)] text-gray-300 h-auto shadow-md shadow-stone-800 hover:bg-[rgb(30,30,30)]">
+        <div className={` transtion relative p-2 m-3 ${Theme.Background} ${Theme.Text} h-auto shadow-md ${Theme.Shadow} ${Theme.Hover}`}>
           <div className={`top-0 left-0 h-full w-0.5 ${status} absolute`}></div>
           <h6 className="font-bold ">{time}</h6>
           <p>{task}</p>
