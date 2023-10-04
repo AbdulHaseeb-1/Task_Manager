@@ -17,6 +17,7 @@ import LoginModal from "../Components/LoginModal";
 import { useDisclosure } from "@nextui-org/react";
 import SignUpModal from "../Components/SignUpModal";
 import ThemeChanger from "./ThemeChanger";
+import { AllThemes } from "../Contexts/ThemeContext";
 
 export function AuthNavigationBar() {
   return (
@@ -69,14 +70,15 @@ export function GuestNavigationBar() {
     isOpen: isOpenSignUp,
     onClose: onCloseSignUp,
   } = useDisclosure();
-  const [Theme, setTheme] = useState(true);
+  const {Theme} = AllThemes();
+
   return (
-    <Navbar className="bg-transparent " shouldHideOnScroll>
+    <Navbar className={`${Theme.Background}`}shouldHideOnScroll>
       <NavbarBrand>
         <p className="font-bold  text-green-500">TimeKing</p>
       </NavbarBrand>
-      <NavbarContent as="div" justify="end" className="">
-        <Link as={"button"} className="text-white" onPress={onOpenLogin}>
+      <NavbarContent as="div" justify="end" className="text-black">
+        <Link as={"button"} className={`${Theme.Text}`} onPress={onOpenLogin}>
           Login
         </Link>
         <LoginModal isOpen={isOpenLogin} onClose={onCloseLogin} />
@@ -84,7 +86,7 @@ export function GuestNavigationBar() {
         <span className="text-green-500 hidden sm:flex">|</span>
         <Link
           as={"button"}
-          className="text-white hidden sm:flex"
+          className={`${Theme.Text} hidden sm:flex`}
           onPress={onOpenSignUp}
         >
           Signup

@@ -1,13 +1,14 @@
 import React from "react";
 
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link} from "@nextui-org/react";
+import { AllThemes } from "../Contexts/ThemeContext";
 
 
 export default function LoginModal({isOpen,onClose}) {
- 
+ const {Theme} = AllThemes()
   return (
     <>
-       <Modal isOpen={isOpen} onOpenChange={onClose} placement="  center" backdrop="blur" className="bg-[rgb(21,21,21)] text-white" >
+       <Modal isOpen={isOpen} onOpenChange={onClose} placement="  center" backdrop="blur" className={`${Theme.Background} ${Theme.Text}`} >
         <ModalContent>
           {(onClose) => (
             <>
@@ -32,7 +33,7 @@ export default function LoginModal({isOpen,onClose}) {
                     }}
                     color="success"   
                   >
-                   <p className="text-gray-200"> Remember me    </p> 
+                   <p className={`${Theme.Text}`}> Remember me   </p> 
                   </Checkbox>
                   <Link color="primary" href="#" size="sm">
                     Forgot password?

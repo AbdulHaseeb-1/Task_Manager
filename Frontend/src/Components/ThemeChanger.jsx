@@ -10,19 +10,21 @@ export default function ThemeChanger() {
   }
   if (Theme.Label == "Dark") {
     return (
+      
       <Button
         isIconOnly
-        className="transition rounded-3xl text-gray-300 bg-black"
+        className={` rounded-3xl ${Theme.Background} ${Theme.Text}`}
         onClick={ChangeTheme}
-      >
+        >
         <SunDimIcon />
       </Button>
+     
     );
   } else {
     return (
       <Button
         isIconOnly
-        className="rounded-3xl text-gray-300 bg-black"
+        className={` rounded-3xl ${Theme.Background} ${Theme.Text}`}
         onClick={ChangeTheme}
       >
         <MoonIcon />

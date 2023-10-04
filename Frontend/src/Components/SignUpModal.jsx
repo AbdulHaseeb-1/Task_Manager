@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Modal,
   ModalContent,
@@ -7,12 +6,13 @@ import {
   ModalBody,
   ModalFooter,
   Button,
- 
   Input,
   Link,
 } from "@nextui-org/react";
+import { AllThemes } from "../Contexts/ThemeContext";
 
 export default function SignUpModal({ isOpen, onClose }) {
+  const {Theme} = AllThemes() 
   return (
     <>
       <Modal
@@ -20,7 +20,7 @@ export default function SignUpModal({ isOpen, onClose }) {
         onOpenChange={onClose}
         placement="center"
         backdrop="blur"
-        className="bg-[rgb(21,21,21)] text-white"
+        className={`${Theme.Text} ${Theme.Background}`}
       >
         <ModalContent>
           {(onClose) => (

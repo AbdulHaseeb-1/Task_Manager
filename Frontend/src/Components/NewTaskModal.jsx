@@ -10,17 +10,18 @@ import {
   Select,
   SelectItem,
 } from "@nextui-org/react";
+import { AllThemes } from "../Contexts/ThemeContext";
 
 function NewTask({ isOpen, onClose }) {
 const categories = [{id:1,value:""},{id:2,value:"Personal"},{id:3,value:"Work"},{id:4,value:"Wishlist"}]
-
+const {Theme} = AllThemes()
   return (
     <Modal
       isOpen={isOpen}
       onOpenChange={onClose}
       placement="top-center"
       backdrop="blur"
-      className="bg-[rgb(21,21,21)] text-white"
+      className={`${Theme.Background} ${Theme.Text}`}
     >
       <ModalContent>
         {(onClose) => (
@@ -37,8 +38,8 @@ const categories = [{id:1,value:""},{id:2,value:"Personal"},{id:3,value:"Work"},
 <Select 
         label="Select an category" 
         variant="underlined"
-        className="max-w-xs  text-white" 
-        classNames={{listbox:"bg-[rgb(21,21,21)]",popover:"bg-[rgb(21,21,21)] text-white"}}
+        className={`${Theme.Text} max-w-xs `}
+        classNames={{listbox:`${Theme.Text}` ,popover:`${Theme.Background} ${Theme.Text}`}}
       >
         {categories.map((category) => (
           <SelectItem key={category.id} value={category.value}>
